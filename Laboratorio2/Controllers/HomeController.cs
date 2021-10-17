@@ -13,15 +13,29 @@ namespace Laboratorio2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private IPersona ipersona;
+        public HomeController(ILogger<HomeController> logger, IPersona ipersona)
         {
+            this.ipersona = ipersona;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-          
+            return View();
+        }
+
+        public IActionResult GetAll()
+        {
+            var Lista = ipersona.ListarPersonas();
+
+            return Json(new { data = Lista });
+
+        }
+
+        public IActionResult Guardar()
+        {
+
 
             return View();
         }
