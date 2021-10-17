@@ -1,4 +1,6 @@
 using Laboratorio2.Data;
+using Laboratorio2.Repository;
+using Laboratorio2.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +30,9 @@ namespace Laboratorio2
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString
-           ("DefaultConnecion"))); 
+           ("DefaultConnecion")));
+
+            services.AddTransient<IPersona, PersonaReporitorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

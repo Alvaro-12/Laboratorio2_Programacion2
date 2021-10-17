@@ -1,4 +1,5 @@
 ﻿using Laboratorio2.Models;
+using Laboratorio2.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,6 +21,8 @@ namespace Laboratorio2.Controllers
 
         public IActionResult Index()
         {
+          
+
             return View();
         }
 
