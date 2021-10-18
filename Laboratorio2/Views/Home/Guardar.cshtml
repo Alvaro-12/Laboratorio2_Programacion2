@@ -1,26 +1,36 @@
-﻿
+﻿@model Laboratorio2.Dominio.persona
 @{
     ViewData["Title"] = "Guardar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html
+@*@Html
 <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
 @Html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-<div class="animate__animated animate__backInLeft">
-    <h1>
-        <i class="fa fa-list-ul"></i>
-
-        agregar nueva persona
-    </h1>
-</div>
+class="animate__animated animate__backInLeft">*@
+ 
 
 
 @using (Html.BeginForm("Guardar", "Home", FormMethod.Post))
 {
- @addTagHelper 
+    <i class="fa fa-list-ul"></i><h1>Agregar Nueva Persona</h1>
+    
+   
+    <label><strong> Nombre Persona</strong></label>
+    <input asp.for="NombrePersona"  type="text" />
+    <span asp-validation-for="NombrePersona"> </span>
+
+    <label><strong>Edad</strong>  </label>
+    <input asp.for="EdadPersona" type="number"/>
+    <span asp-validation-for="EdadPersona"></span>
+
+    <label><strong>Descripcion Persona </strong></label>
+    <input asp.for="DescripcionPersona" type="text"/>
+    <span asp-validation-for="DescripcionPersona"></span>
+
+    <button type="submit",>Enviar </button >
 
 }
 
