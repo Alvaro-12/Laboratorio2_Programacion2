@@ -4,33 +4,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@Html
-<script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
-@Html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-class="animate__animated animate__backInLeft">*@
- 
+@Html  <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+@Html  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-@using (Html.BeginForm("Registro", "Home", FormMethod.Post))
-{
-    <i class="fa fa-list-ul"></i><h1>Agregar Nueva Persona</h1>
-    
-   
-    <label><strong> Nombre Persona</strong></label>
-    <input asp-for="NombrePersona"  type="text" />
-    <span asp-validation-for="NombrePersona"> </span>
+       <div class="animate__animated animate__fadeInUpBig">
+           @using (Html.BeginForm("Registro", "Home", FormMethod.Post))
+           {
 
-    <label><strong>Edad</strong>  </label>
-    <input asp-for="EdadPersona" type="number"/>
-    <span asp-validation-for="EdadPersona"></span>
+               <h1>Agregar Nueva Persona</h1>
 
-    <label><strong>Descripcion Persona </strong></label>
-    <input asp-for="DescripcionPersona" type="text"/>
-    <span asp-validation-for="DescripcionPersona"></span>
+               <i class="fa fa-user-circle"></i>
+               <label><strong> Nombre Persona</strong></label>
+               <input asp-for="NombrePersona" type="text" />
+               <span asp-validation-for="NombrePersona"> </span>
+               <br />
+               <br />
 
-    <button type="submit",>Enviar </button >
+               <i class="fa fa-calendar-check"></i>
+               <label><strong>Edad</strong>  </label>
+               <input asp-for="EdadPersona" type="number" />
+               <span asp-validation-for="EdadPersona"></span>
+               <br />
+               <br />
 
-}
+               <i class="fa fa-file-alt"></i>
+               <label><strong>Descripcion Persona </strong></label>
+               <input asp-for="DescripcionPersona" type="text" />
+               <span asp-validation-for="DescripcionPersona"></span>
+               <br />
+               <br />
 
+               <button type="submit" >Enviar </button>
+               <br />
+               @Html.ActionLink("Ver tabla", "Index", new { }, new { @class = "btn btn-success" })
+
+           }
+
+       </div>

@@ -22,7 +22,7 @@ namespace Laboratorio2.Dominio
         public  string NombrePersona { get; set;}
         [Display (Name = "EdadPersona")]
         [Required(ErrorMessage = "Campo requerido ")]
-        [Range (18,122, ErrorMessage = "Eres menor de edda no puedes entrar ")]
+        [Range (18,122, ErrorMessage = "Eres menor de edad no puedes entrar ")]
         public int EdadPersona { get; set; }
         [Display (Name = "DescripcionPersona")]
         [Required(ErrorMessage = "Campo requerido ")]

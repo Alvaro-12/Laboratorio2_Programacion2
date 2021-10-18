@@ -25,7 +25,6 @@ namespace Laboratorio2.Controllers
         {
             return View();
         }
-
         public IActionResult GetAll()
         {
             var Lista = ipersona.ListarPersonas();
@@ -33,7 +32,6 @@ namespace Laboratorio2.Controllers
             return Json(new { data = Lista });
 
         }
-
         public IActionResult Guardar()
         {
             return View();
@@ -52,17 +50,11 @@ namespace Laboratorio2.Controllers
                 return Redirect("/Home/Index");
             }
 
-
-
             else
             {
                 return View("Guardar", personaModel);
             }
-
-
-
-
-            
+  
         }
 
         public IActionResult Privacy()
