@@ -13,21 +13,21 @@ class="animate__animated animate__backInLeft">*@
  
 
 
-@using (Html.BeginForm("Guardar", "Home", FormMethod.Post))
+@using (Html.BeginForm("Registro", "Home", FormMethod.Post))
 {
     <i class="fa fa-list-ul"></i><h1>Agregar Nueva Persona</h1>
     
    
     <label><strong> Nombre Persona</strong></label>
-    <input asp.for="NombrePersona"  type="text" />
+    <input asp-for="NombrePersona"  type="text" />
     <span asp-validation-for="NombrePersona"> </span>
 
     <label><strong>Edad</strong>  </label>
-    <input asp.for="EdadPersona" type="number"/>
+    <input asp-for="EdadPersona" type="number"/>
     <span asp-validation-for="EdadPersona"></span>
 
     <label><strong>Descripcion Persona </strong></label>
-    <input asp.for="DescripcionPersona" type="text"/>
+    <input asp-for="DescripcionPersona" type="text"/>
     <span asp-validation-for="DescripcionPersona"></span>
 
     <button type="submit",>Enviar </button >

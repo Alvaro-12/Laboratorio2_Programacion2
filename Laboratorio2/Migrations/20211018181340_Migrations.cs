@@ -12,9 +12,9 @@ namespace Laboratorio2.Migrations
                 {
                     IdPersona = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombrePersona = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NombrePersona = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EdadPersona = table.Column<int>(type: "int", nullable: false),
-                    DescripcionPersona = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DescripcionPersona = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

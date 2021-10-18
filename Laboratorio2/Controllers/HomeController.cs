@@ -1,4 +1,5 @@
-﻿using Laboratorio2.Models;
+﻿using Laboratorio2.Dominio;
+using Laboratorio2.Models;
 using Laboratorio2.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -35,9 +36,33 @@ namespace Laboratorio2.Controllers
 
         public IActionResult Guardar()
         {
-            
-
             return View();
+        }
+        [HttpPost]
+        public IActionResult Registro(persona personaModel)
+        {
+            if (ModelState.IsValid)
+            {
+                persona per = new persona();
+                per.NombrePersona = personaModel.NombrePersona;
+                per.EdadPersona = personaModel.EdadPersona;
+                per.DescripcionPersona = personaModel.DescripcionPersona;
+
+                ipersona.Insertar(per);
+                return Redirect("/Home/Index");
+            }
+
+
+
+            else
+            {
+                return View("Guardar", personaModel);
+            }
+
+
+
+
+            
         }
 
         public IActionResult Privacy()
