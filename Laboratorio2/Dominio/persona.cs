@@ -16,7 +16,6 @@ namespace Laboratorio2.Dominio
         public  string NombrePersona { get; set;}
         public int EdadPersona { get; set; }
         public string DescripcionPersona { get; set; }
-
-         
+   
     }
 }

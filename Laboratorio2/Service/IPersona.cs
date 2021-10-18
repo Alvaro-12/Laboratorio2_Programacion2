@@ -12,6 +12,5 @@ namespace Laboratorio2.Service
 
         ICollection<persona> ListarPersonas();
 
-
     }
 }

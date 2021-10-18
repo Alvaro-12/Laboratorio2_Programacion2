@@ -35,7 +35,7 @@ namespace Laboratorio2.Controllers
 
         public IActionResult Guardar()
         {
-
+            
 
             return View();
         }
